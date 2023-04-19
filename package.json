@@ -1,0 +1,14 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna:build": "lerna run build && lerna bootstrap",
+    "updateLayer": "npm run lerna:build && mkdir -p src/apps/backend/layers/tasksLayer/nodejs/node_modules/@jfollert && cp -R src/contexts/management/tasks src/apps/backend/layers/tasksLayer/nodejs/node_modules/@jfollert && cd src/apps/backend && npm run build && cdk deploy"  },  
+  "devDependencies": {
+    "lerna": "^6.6.1",
+    "typescript": "^5.0.4"
+  }
+}

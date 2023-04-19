@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CreateTask = void 0;
+const Task_1 = require("../domain/Task");
+class CreateTask {
+    constructor(taskRepository) {
+        this.taskRepository = taskRepository;
+    }
+    async execute(title, description) {
+        const task = new Task_1.Task(Date.now().toString(), title, description, false);
+        await this.taskRepository.save(task);
+        return task;
+    }
+}
+exports.CreateTask = CreateTask;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ3JlYXRlVGFzay5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNyZWF0ZVRhc2sudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEseUNBQXNDO0FBR3RDLE1BQWEsVUFBVTtJQUNyQixZQUFvQixjQUE4QjtRQUE5QixtQkFBYyxHQUFkLGNBQWMsQ0FBZ0I7SUFBRyxDQUFDO0lBRXRELEtBQUssQ0FBQyxPQUFPLENBQUMsS0FBYSxFQUFFLFdBQW1CO1FBQzlDLE1BQU0sSUFBSSxHQUFHLElBQUksV0FBSSxDQUFDLElBQUksQ0FBQyxHQUFHLEVBQUUsQ0FBQyxRQUFRLEVBQUUsRUFBRSxLQUFLLEVBQUUsV0FBVyxFQUFFLEtBQUssQ0FBQyxDQUFDO1FBQ3hFLE1BQU0sSUFBSSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsSUFBSSxDQUFDLENBQUM7UUFDckMsT0FBTyxJQUFJLENBQUM7SUFDZCxDQUFDO0NBQ0Y7QUFSRCxnQ0FRQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IFRhc2sgfSBmcm9tICcuLi9kb21haW4vVGFzayc7XG5pbXBvcnQgeyBUYXNrUmVwb3NpdG9yeSB9IGZyb20gJy4uL2RvbWFpbi9UYXNrUmVwb3NpdG9yeSc7XG5cbmV4cG9ydCBjbGFzcyBDcmVhdGVUYXNrIHtcbiAgY29uc3RydWN0b3IocHJpdmF0ZSB0YXNrUmVwb3NpdG9yeTogVGFza1JlcG9zaXRvcnkpIHt9XG5cbiAgYXN5bmMgZXhlY3V0ZSh0aXRsZTogc3RyaW5nLCBkZXNjcmlwdGlvbjogc3RyaW5nKTogUHJvbWlzZTxUYXNrPiB7XG4gICAgY29uc3QgdGFzayA9IG5ldyBUYXNrKERhdGUubm93KCkudG9TdHJpbmcoKSwgdGl0bGUsIGRlc2NyaXB0aW9uLCBmYWxzZSk7XG4gICAgYXdhaXQgdGhpcy50YXNrUmVwb3NpdG9yeS5zYXZlKHRhc2spO1xuICAgIHJldHVybiB0YXNrO1xuICB9XG59XG4iXX0=
